@@ -1,0 +1,7 @@
+# npm
+alias npme='PATH=$(npm bin):$PATH'
+alias npmr='npm run'
+alias npms='npm start'
+alias npmls='npm ls --depth 0'
+alias bullshit='cut -c 9- | cat | tr "\n" " " | rev | cut -c 2- | rev | pbcopy; pbpaste' 
+

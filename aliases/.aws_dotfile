@@ -1,0 +1,5 @@
+# aws
+alias s3='aws s3'
+alias s3a='aws s3api'
+alias ec2='aws ec2'
+
