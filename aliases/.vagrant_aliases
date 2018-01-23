@@ -1,0 +1,6 @@
+alias vt='vagrant'
+alias vtg='vagrant global-status'
+alias vth='vagrant halt'
+alias vts='vagrant ssh'
+alias vtst='vagrant status'
+alias vtu='vagrant up'

@@ -9,6 +9,6 @@ alias re-source='source ~/.bash_profile'
 alias bash_profile='vim ~/.bash_profile'
 alias bash_profile2='vim ${DOTFILES_PATH}/.bash_profile'
 
-# specific aliases 
-source ${DOTFILES_PATH}/aliases/.npm_dotfile
-source ${DOTFILES_PATH}/aliases/.git_dotfile
+# specific aliases
+source ${DOTFILES_PATH}/aliases/.npm_aliases
+source ${DOTFILES_PATH}/aliases/.git_aliases

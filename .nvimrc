@@ -33,32 +33,27 @@ set clipboard=unnamed
 " disable word wrap
 set nowrap
 
-
-" Vundle
+" vundle
 filetype off
 set rtp+=~/.nvim/bundle/Vundle.vim
 call vundle#begin()
 
 " utility
-Plugin 'gmarik/Vundle.vim'
+Plugin 'vundlevim/vundle.vim'
 Plugin 'editorconfig/editorconfig-vim'
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-surround'
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
 Plugin 'ciaranm/detectindent'
 
 " syntax
 Plugin 'mxw/vim-jsx'
 Plugin 'pangloss/vim-javascript'
-Plugin 'digitaltoad/vim-jade'
+Plugin 'digitaltoad/vim-pug'
 Plugin 'wavded/vim-stylus'
 Plugin 'groenewege/vim-less'
-
-" color
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'octodoodle/blackdust-flat.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -67,8 +62,4 @@ filetype plugin indent on
 let g:ctrlp_custom_ignore = {
   \ 'dir':  'dist\|build\|node_modules\|DS_Store\|git'
   \ }
-
-" colorscheme
-set background=dark
-colorscheme solarized
 
