@@ -58,8 +58,11 @@ Plugin 'groenewege/vim-less'
 call vundle#end()
 filetype plugin indent on
 
-" ctrpl ignores
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  'dist\|build\|node_modules\|DS_Store\|git'
-  \ }
+" ctrlp root marker
+let g:ctrlp_root_markers = ['.editorconfig']
 
+" ctrlp show hidden hidden files
+let g:ctrlp_show_hidden = 1
+
+" ctrlp ignore
+ let g:ctrlp_custom_ignore = { 'dir': 'git$\|build$\|node_modules$' }
