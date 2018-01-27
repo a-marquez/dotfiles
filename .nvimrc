@@ -6,8 +6,9 @@ set encoding=utf-8
 set number
 
 " show invisible characters
-" set list
-" set listchars=space:·,tab:▸-
+set list
+set listchars=space:·,tab:▸-
+hi NonText ctermfg=0
 
 " show commands as we type them
 set showcmd
@@ -21,17 +22,24 @@ set incsearch
 " highlight the search matches
 set hlsearch
 
-" always show powerline
-set laststatus=2
-
-" allow JSX in normal JS files
-let g:jsx_ext_required = 0
-
 " use system clipboard
 set clipboard=unnamed
 
 " disable word wrap
 set nowrap
+
+" natural split directions
+set splitright
+set splitbelow
+
+" move swapfiles out of project
+set directory=$HOME/.nvim/swapfiles//
+
+" change diff colors for legibility
+highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
+highlight DiffDelete cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
+highlight DiffChange cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
+highlight DiffText   cterm=bold ctermfg=10 ctermbg=88 gui=none guifg=bg guibg=Red
 
 " vundle
 filetype off
@@ -57,6 +65,12 @@ Plugin 'groenewege/vim-less'
 
 call vundle#end()
 filetype plugin indent on
+
+" always show powerline
+set laststatus=2
+
+" allow JSX in normal JS files
+let g:jsx_ext_required = 0
 
 " ctrlp root marker
 let g:ctrlp_root_markers = ['.editorconfig']
