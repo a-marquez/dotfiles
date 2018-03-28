@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# TODO: add show volume in menu bar, for quicker output toggling
+
 # ~/.macos — https://mths.be/osx
 
 # Close any open System Preferences panes, to prevent them from overriding

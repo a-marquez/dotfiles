@@ -99,6 +99,8 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-surround'
 Plugin 'vim-airline/vim-airline'
 Plugin 'ciaranm/detectindent'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'mattn/emmet-vim'
 
 " syntax
 Plugin 'mxw/vim-jsx'
@@ -119,6 +121,9 @@ let g:jsx_ext_required = 0
 " ctrlp root marker
 let g:ctrlp_root_markers = ['.editorconfig', 'docker-compose.yml']
 
+" ctrlp only automatically switch to open files within the same tab, to treat tabs as separate views
+let g:ctrlp_switch_buffer = 'e'
+
 " ctrlp use silver searcher - reference: https://robots.thoughtbot.com/faster-grepping-in-vim
 if executable('ag')
   " use ag in CtrlP for listing files. Lightning fast and respects .gitignore
@@ -130,4 +135,12 @@ else
   let g:ctrlp_show_hidden = 1
   let g:ctrlp_custom_ignore = { 'dir': 'git$\|build$\|node_modules$' }
 endif
+
+" emmet settings
+let g:user_emmet_settings = {
+\  'javascript.jsx': {
+\    'extends': 'jsx',
+\    'quote_char': "'"
+\  }
+\}
 
