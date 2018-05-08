@@ -8,17 +8,17 @@ hash -d -- projects=$HOME/Desktop/projects
 
 # utility aliases
 alias re-source='source $HOME/.zprofile'
-alias zprofile='nvim $HOME/.zprofile'
-alias zprofile2='nvim $DOTFILES_PATH/.zprofile'
-alias nvimrc='nvim $DOTFILES_PATH/.nvimrc'
-alias tmuxconf='nvim $DOTFILES_PATH/.tmux.conf'
+alias zprofile='vim $HOME/.zprofile'
+alias zprofile2='vim $DOTFILES_PATH/.zprofile'
+alias nvimrc='vim $DOTFILES_PATH/.nvimrc'
+alias tmuxconf='vim $DOTFILES_PATH/.tmux.conf'
 alias itree='tree --prune -I $(cat $DOTFILES_PATH/.gitignore | egrep -v "^#.*$|^[[:space:]]*$" | tr "\\n" "|")' #https://coderwall.com/p/wgq89a/use-tree-with-gitignore
 
 # general aliases
 alias o='open'
-alias ni='nvim'
-alias vi='nvim'
 alias vim='nvim'
+alias v='vim'
+alias vn='vim -u NONE'
 alias tm='tmux'
 alias tma='tmux a'
 alias tml='tmux list-sessions'
