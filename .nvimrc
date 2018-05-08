@@ -41,7 +41,14 @@ endif
 set hlsearch
 
 " use system clipboard
-set clipboard=unnamed
+set clipboard=unnamedplus
+
+if has("mac")
+  set clipboard=unnamed
+elseif has("unix")
+  set clipboard=unnamedplus
+endif
+
 
 " disable word wrap
 set nowrap
