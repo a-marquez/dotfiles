@@ -17,7 +17,8 @@ node_modules
 vendor
 reference
 
-# binaries
+# artifacts
 build
 dist
+.cache
 

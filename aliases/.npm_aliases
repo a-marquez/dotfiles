@@ -2,6 +2,8 @@
 alias npme='PATH=$(npm bin):$PATH'
 alias npmr='npm run'
 alias npms='npm start'
+alias npmb='npm run build'
+alias npmt='npm test'
 alias npmls='npm ls --depth 0'
 alias npmi='npm i'
 alias npmid='npm i -D'

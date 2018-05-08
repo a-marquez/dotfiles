@@ -21,7 +21,11 @@ alias vi='nvim'
 alias vim='nvim'
 alias tm='tmux'
 alias tma='tmux a'
+alias tml='tmux list-sessions'
+alias tmn='tmux new-session \; new-window \; split-window -v \; split-window -h \; select-pane -U \; select-window -t 1 \;'
 alias todos='ag -r TODO .'
+alias agr='ag -r'
+alias grepr='grep -r'
 
 # specific aliases
 source $DOTFILES_PATH/aliases/.git_aliases

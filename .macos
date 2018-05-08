@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
 # TODO: add show volume in menu bar, for quicker output toggling
+# TODO: add prefences > mission control > when switching to an application... > false
+# TODO: add finder prefences > new windows show: Desktop
 
 # ~/.macos — https://mths.be/osx
 
@@ -38,6 +40,7 @@ defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 # Set a blazingly fast keyboard repeat rate
 defaults write NSGlobalDomain KeyRepeat -int 1
 defaults write NSGlobalDomain InitialKeyRepeat -int 10
+defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 
 # Disable press-and-hold for keys in favor of key repeat
 defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
@@ -66,6 +69,9 @@ defaults write com.apple.dock persistent-apps -array
 
 # Speed up Mission Control animations
 defaults write com.apple.dock expose-animation-duration -float 0.1
+
+# Disable animations with accessibility > reduce motion, may obsolete previous statement
+defaults write com.apple.universalaccess reduceMotion -bool true
 
 # Remove the auto-hiding Dock delay
 defaults write com.apple.dock autohide-delay -float 0
