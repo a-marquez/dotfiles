@@ -1,3 +1,9 @@
+if has('nvim')
+  let s:VIM_HOME=$HOME . '/.nvim'
+else
+  let s:VIM_HOME=$HOME . '/.vim'
+endif
+
 syntax enable
 
 set encoding=utf-8
@@ -25,14 +31,28 @@ set smartcase
 " show first match as search strings are typed
 set incsearch
 
-" show all results of substitute command as it is typed
-set inccommand=split
+
+if has('nvim')
+  " show all results of substitute command as it is typed
+  set inccommand=split
+endif
 
 " highlight the search matches
 set hlsearch
 
 " use system clipboard
-set clipboard=unnamed
+if has('mac')
+  set clipboard=unnamed
+elseif has('unix')
+  set clipboard=unnamedplus
+endif
+
+if has("mac")
+  set clipboard=unnamed
+elseif has("unix")
+  set clipboard=unnamedplus
+endif
+
 
 " disable word wrap
 set nowrap
@@ -42,7 +62,7 @@ set splitright
 set splitbelow
 
 " move swapfiles out of project
-set directory=$HOME/.nvim/swapfiles//
+let &directory=s:VIM_HOME . '/swap//'
 
 " change diff colors for legibility
 highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
@@ -96,7 +116,7 @@ endif
 
 " automatic session saving and loading - reference: https://stackoverflow.com/questions/1642611/how-to-save-and-restore-multiple-different-sessions-in-vim/47656092#47656092
 function! MakeSession(overwrite)
-  let b:sessiondir = $HOME . "/.nvim/sessions" . getcwd()
+  let b:sessiondir = s:VIM_HOME . '/sessions' . getcwd()
   if (filewritable(b:sessiondir) != 2)
     exe 'silent !mkdir -p ' b:sessiondir
     redraw!
@@ -109,7 +129,7 @@ function! MakeSession(overwrite)
 endfunction
 
 function! LoadSession()
-  let b:sessiondir = $HOME . "/.nvim/sessions" . getcwd()
+  let b:sessiondir = s:VIM_HOME . "/sessions" . getcwd()
   let b:sessionfile = b:sessiondir . "/session.vim"
   if (filereadable(b:sessionfile))
     exe 'source ' b:sessionfile
@@ -128,7 +148,8 @@ endif
 
 " vundle
 filetype off
-set rtp+=~/.nvim/bundle/Vundle.vim
+" set rtp+=:VIM_HOME . '/bundle/Vundle.vim'
+let &rtp.=',' . s:VIM_HOME . '/bundle/Vundle.vim'
 call vundle#begin()
 
 " utility essentials
@@ -147,9 +168,7 @@ Plugin 'asheq/close-buffers.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'vim-airline/vim-airline'
 Plugin 'mattn/emmet-vim'
-" Plugin 'w0rp/ale'
-Plugin 'a-marquez/ale' " todo: return to upstream after PR merge
-Plugin 'terryma/vim-multiple-cursors'
+Plugin 'w0rp/ale'
 Plugin 'dhruvasagar/vim-table-mode'
 Plugin 'godlygeek/tabular.git'
 Plugin 'heavenshell/vim-jsdoc'
