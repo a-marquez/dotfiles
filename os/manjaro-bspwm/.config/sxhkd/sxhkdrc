@@ -5,6 +5,12 @@ super + alt + {h, l, k, j}
 super + q
 	bspc  node -c
 
+super + {_,shift + }Tab
+    bspc node -f {next,prev}.local
+
+super + alt + f 
+	bspc node -t {fullscreen,tiled}	
+
 # bspwm hotkeys
 #
 # Cleanly quit bspwm
@@ -39,8 +45,8 @@ super + ctrl + shift + t
 	bspcp float
 	
 # Toggle fullscreen
-super + shift + f 
-	bspc node -t {fullscreen,tiled}	
+# super + shift + f 
+# 	bspc node -t {fullscreen,tiled}	
 
 # Try to keep size and position of the selected window
 super + o
@@ -69,11 +75,11 @@ super + ctrl + c
 # ______________    
 
 # Autopresel (split window in its largest dimension)
-super + ctrl + Return
-	auto-presel
-
-ctrl + space
-	auto-presel
+# super + ctrl + Return
+# 	auto-presel
+# 
+# ctrl + space
+# 	auto-presel
 	
 # Presel window for splitting in certain direction
 alt + ctrl + {a,s,w,d}
@@ -124,16 +130,16 @@ super + {_,shift + }{1-9,0}
 #	bspc node -d ^{1-9,10}
 
 # Select previous / next desktop
-super + {m,n}
+super + {n,m}
 	bspc desktop -f {prev.occupied,next.occupied} 
 
 # cycle windows
-alt + {_,shift + }Tab
-    bspc node -f {next,prev}
+# alt + {_,shift + }Tab
+#     bspc node -f {next,prev}
 
 # Go to specific window
-super + Tab
-	WindowSelector
+# super + Tab
+#         WindowSelector
 	
 #Focus windows by direction, works with multihead
 super +  {a,s,w,d}
