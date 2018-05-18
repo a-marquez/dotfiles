@@ -169,6 +169,9 @@ filetype plugin indent on
 " easy motion disable default mappings
 let g:EasyMotion_do_mapping = 0
 
+" editorconfig
+let g:EditorConfig_max_line_indicator = 'exceeding'
+
 " surround swap punctuations to default to no whitespace
 " TODO: fix, doesn't seem to work
 " nmap ) (
@@ -250,7 +253,7 @@ let g:eregex_default_enable = 0
 " let g:ctrlp_map = '<leader>p'
 
 " ctrlp root marker
-let g:ctrlp_root_markers = ['.editorconfig', 'docker-compose.yml']
+let g:ctrlp_root_markers = ['.editorconfig', 'docker-compose.yml', 'package.json']
 
 " ctrlp only automatically switch to open files within the same tab, to treat tabs as separate views
 let g:ctrlp_switch_buffer = 'e'
