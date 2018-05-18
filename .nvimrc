@@ -47,13 +47,6 @@ elseif has('unix')
   set clipboard=unnamedplus
 endif
 
-if has("mac")
-  set clipboard=unnamed
-elseif has("unix")
-  set clipboard=unnamedplus
-endif
-
-
 " disable word wrap
 set nowrap
 
