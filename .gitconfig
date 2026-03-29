@@ -1,0 +1,13 @@
+[init]
+	defaultBranch = main
+
+# Default user, must be first or it'll override conditional identities before it
+# [user]
+# 	name = name
+# 	email = name@email.com
+
+# Alternate user dynamic https and ssh config
+# [includeIf "hasconfig:remote.*.url:https://gitlab.com/**"]
+#  path = ~/.gitconfig_gitlab
+# [includeIf "hasconfig:remote.*.url:git@gitlab.com:*/**"]
+#  path = ~/.gitconfig_gitlab
