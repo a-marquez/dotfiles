@@ -1,0 +1,72 @@
+// Place your key bindings in this file to override the defaults
+[
+	{
+		"key": "ctrl+`",
+		"command": "workbench.action.focusActiveEditorGroup",
+		"when": "terminalFocus"
+	},
+	{
+		"key": "j",
+		"command": "editor.action.scrollDownHover",
+		"when": "editorHoverFocused && vim.active === true"
+	},
+	{
+		"key": "k",
+		"command": "editor.action.scrollUpHover",
+		"when": "editorHoverFocused && vim.active === true"
+	},
+	{
+		"key": "l",
+		"command": "editor.action.scrollRightHover",
+		"when": "editorHoverFocused && vim.active === true"
+	},
+	{
+		"key": "h",
+		"command": "editor.action.scrollLeftHover",
+		"when": "editorHoverFocused && vim.active === true"
+	},
+	{
+		"key": "ctrl+tab",
+		"command": "workbench.action.nextEditor",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "ctrl+shift+tab",
+		"command": "workbench.action.previousEditor",
+		"when": "editorTextFocus"
+	},
+	/* START Windows-specific keybindings to match Linux/macOS behavior */
+	{
+		"key": "ctrl+U",
+		"command": "workbench.action.terminal.sendSequence",
+		"args": {
+			"text": "\u001B"
+		},
+		"when": "isWindows && terminalFocus"
+	},
+	{
+		"key": "ctrl+l",
+		"command": "workbench.action.terminal.sendSequence",
+		"args": {
+			"text": "\u0003cls\u000D"
+		},
+		"when": "isWindows && terminalFocus"
+	},
+	{
+		"key": "ctrl+p",
+		"command": "workbench.action.terminal.sendSequence",
+		"args": {
+			"text": "\u001b[A"
+		},
+		"when": "isWindows && terminalFocus"
+	},
+	{
+		"key": "ctrl+n",
+		"command": "workbench.action.terminal.sendSequence",
+		"args": {
+			"text": "\u001b[B"
+		},
+		"when": "isWindows && terminalFocus"
+	},
+	/* END Windows-specific keybindings to match Linux/macOS behavior */
+]
