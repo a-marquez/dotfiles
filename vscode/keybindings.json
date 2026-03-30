@@ -69,4 +69,43 @@
 		"when": "isWindows && terminalFocus"
 	},
 	/* END Windows-specific keybindings to match Linux/macOS behavior */
+    /* START Claude Code shift+enter keybinding */
+    {
+        "key": "shift+enter",
+        "command": "workbench.action.terminal.sendSequence",
+        "args": {
+            "text": "\u001b\r"
+        },
+        "when": "terminalFocus"
+    },
+    /* START Cursor linux specific keybindings */
+    {
+        "key": "ctrl+j",
+        "command": "-workbench.action.togglePanel",
+        "when": "isLinux",
+    },
+    {
+        "key": "ctrl+j",
+        "command": "-workbench.action.closePanel",
+        "when": "isLinux",
+    },
+    {
+        "key": "ctrl+j",
+        "command": "-workbench.action.terminal.toggleTerminal",
+        "when": "isLinux",
+    },
+    {
+        "key": "ctrl+l",
+        "command": "-aichat.newchataction",
+        "when": "isLinux"
+    },
+    {
+        "key": "ctrl+p",
+        "command": "workbench.action.terminal.sendSequence",
+        "args": {
+            "text": "\u001b[A"
+        },
+        "when": "isLinux && terminalFocus"
+    },
+    /* END Cursor linux specific keybindings */
 ]

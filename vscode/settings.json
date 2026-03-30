@@ -11,7 +11,7 @@
 	},
 	"editor.cursorSurroundingLines": 5,
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
-	"editor.detectIndentation": false,
+	"editor.detectIndentation": true,
 	"editor.fontFamily": "Fira Code, Menlo, Monaco, 'Courier New', monospace",
 	"editor.lineNumbers": "relative",
 	"editor.minimap.enabled": false,
@@ -40,6 +40,7 @@
 	"terminal.integrated.scrollback": 10000,
 	"typescript.preferences.importModuleSpecifier": "non-relative",
 	"typescript.updateImportsOnFileMove.enabled": "always",
+	"window.commandCenter": true,
 	"workbench.colorTheme": "Monokai",
 	"workbench.editor.editorActionsLocation": "titleBar",
 	"workbench.editor.revealIfOpen": true,
@@ -61,6 +62,10 @@
 	 * START: Vim extension
 	 */
 	"vim.foldfix": true,
+	"vim.handleKeys": {
+		"<C-n>": false,
+		"<C-p>": false,
+	},
 	"vim.highlightedyank.enable": true,
 	"vim.hlsearch": true,
 	"vim.incsearch": true,
@@ -113,17 +118,7 @@
 		},
 		{
 			"before": ["<leader>", "w", "H"],
-			"commands": ["workbench.action.moveEditorToLeftGroup"]
-		},
-		{
-			"before": ["<leader>", "w", "L"],
-			"commands": ["workbench.action.moveEditorToRightGroup"]
-		},
-		{
-			"before": ["<leader>", "w", "J"],
-			"commands": ["workbench.action.moveEditorToBelowGroup"]
-		},
-		{
+			"commands": ["workbench.action.moveEditorToLeftGroup"],
 			"before": ["<leader>", "w", "K"],
 			"commands": ["workbench.action.moveEditorToAboveGroup"]
 		},
@@ -232,7 +227,12 @@
 				"workbench.action.togglePanel"
 			],
 		},
+		{
+			"before": ["<leader>", "l"],
+			"commands": ["composer.addfilestocomposer"]
+		}
 	],
+	"vim.useSystemClipboard": true,
 	"vim.visualModeKeyBindingsNonRecursive": [
 		{
 			"before": ["<leader>", "f"],
@@ -252,7 +252,6 @@
 			"commands": ["editor.action.rename"]
 		}
 	],
-	"vim.useSystemClipboard": true,
 	/*
 	 * END: Vim extension
 	 */
@@ -272,6 +271,8 @@
 	"[xml]": {
 		"editor.defaultFormatter": "redhat.vscode-xml"
 	},
+	"claudeCode.useTerminal": true,
+	"claudeCode.preferredLocation": "panel",
 	"cSpell.blockCheckingWhenTextChunkSizeGreaterThan": 6000,
 	"gitlens.hovers.avatars": false,
 	"gitlens.hovers.currentLine.over": "line",
